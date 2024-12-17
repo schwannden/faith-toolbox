@@ -99,7 +99,7 @@ const BookInfo: Record<Book, number> = {
   Nehemiah: 13,
   Esther: 10,
   Job: 42,
-  Psalms: 150,
+  Psalms: 150, // psalm 119 uses special day
   Proverbs: 31,
   Ecclesiastes: 12,
   "Song of Solomon": 8,
@@ -214,11 +214,10 @@ export function generateReadingPlan(
     }
   }
 
-  // We subtract 1 from the total chapters and days because we want to leave one day for Psalm 119
-  const baseChaptersPerDay = Math.floor(
-    (TOTAL_CHAPTERS - 1) / (numberOfDays - 1),
-  );
-  let remainder = (TOTAL_CHAPTERS - 1) % (numberOfDays - 1);
+  // We subtract 1 from the total days because we want to leave one day for Psalm 119
+  const baseChaptersPerDay = Math.floor(TOTAL_CHAPTERS / (numberOfDays - 1));
+  let remainder = TOTAL_CHAPTERS % (numberOfDays - 1);
+  let unreadChapters = TOTAL_CHAPTERS;
 
   let chapterIndex = 0;
   const plan: DayReading[] = [];
@@ -229,6 +228,7 @@ export function generateReadingPlan(
     if (currentChapter.book === "Psalms" && currentChapter.chapter === 119) {
       // Psalm 119 is special, we must read it alone
       plan.push({ date, chapters: [{ book: "Psalms", chapters: 119 }] });
+      unreadChapters -= 1;
       chapterIndex++;
       continue;
     }
@@ -241,11 +241,13 @@ export function generateReadingPlan(
       dailyTarget += 1;
       remainder -= 1;
     }
+    dailyTarget = Math.min(dailyTarget, unreadChapters);
 
     const dayChapters: { book: Book; chapters: number }[] = [];
     for (let i = 0; i < dailyTarget; i++) {
       const ch = allChapters[chapterIndex + i];
       dayChapters.push({ book: ch.book, chapters: ch.chapter });
+      unreadChapters -= 1;
     }
     chapterIndex += dailyTarget;
     plan.push({ date, chapters: dayChapters });

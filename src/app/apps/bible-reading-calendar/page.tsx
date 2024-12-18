@@ -2,14 +2,49 @@
 
 import { useState } from "react";
 import { DayReading, generateReadingPlan } from "./utils";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Calendar } from "./calendar";
+
+function groupByMonth(dayReadings: DayReading[]): DayReading[][] {
+  const monthlyPlans: DayReading[][] = [];
+  let currentMonth = "";
+  let currentMonthPlans: DayReading[] = [];
+
+  for (const reading of dayReadings) {
+    const [year, month] = reading.date.split("-");
+    const monthKey = `${year}-${month}`;
+
+    if (monthKey !== currentMonth) {
+      // We've hit a new month
+      // If currentMonthPlans has items, push it to monthlyPlans
+      if (currentMonthPlans.length > 0) {
+        monthlyPlans.push(currentMonthPlans);
+      }
+      currentMonth = monthKey;
+      currentMonthPlans = [reading]; // start new array for this month
+    } else {
+      currentMonthPlans.push(reading);
+    }
+  }
+
+  // Push the last month's plans if any
+  if (currentMonthPlans.length > 0) {
+    monthlyPlans.push(currentMonthPlans);
+  }
+
+  return monthlyPlans;
+}
 
 export default function BibleReadingCalendar() {
-  const [year, setYear] = useState<number>(new Date().getFullYear());
-  const [plan, setPlan] = useState<DayReading[]>([]);
+  const [year, setYear] = useState<number>(new Date().getFullYear() + 1);
+  const [yearlyPlans, setYearlyPlans] = useState<DayReading[]>([]);
+
+  const monthlyPlans = groupByMonth(yearlyPlans);
 
   const handleGenerate = () => {
     const readingPlan = generateReadingPlan(year);
-    setPlan(readingPlan);
+    setYearlyPlans(readingPlan);
   };
 
   return (
@@ -20,49 +55,25 @@ export default function BibleReadingCalendar() {
         </h1>
 
         <div className="flex items-center space-x-4 mb-6">
-          <input
+          <Input
             type="number"
-            className="border border-gray-300 rounded p-2 w-32"
             value={year}
-            onChange={(e) => setYear(parseInt(e.target.value, 10) + 1)}
+            onChange={(e) => setYear(parseInt(e.target.value, 10))}
             placeholder="Year"
           />
-          <button
-            onClick={handleGenerate}
-            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
+          <Button onClick={handleGenerate} variant="default">
             Generate
-          </button>
+          </Button>
         </div>
 
-        {plan.length > 0 && (
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left px-4 py-2 border-r">Date</th>
-                  <th className="text-left px-4 py-2">Reading</th>
-                </tr>
-              </thead>
-              <tbody>
-                {plan.map((day, idx) => (
-                  <tr key={idx} className="border-b hover:bg-gray-50">
-                    <td className="px-4 py-2 border-r">{day.date}</td>
-                    <td className="px-4 py-2">
-                      {day.chapters.map((ch, i) => (
-                        <span key={i} className="inline-block mr-2">
-                          {ch.book} {ch.chapters}
-                        </span>
-                      ))}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+        {monthlyPlans.length > 0 &&
+          monthlyPlans.map((monthPlans, index) => (
+            <div key={index} className="overflow-x-auto">
+              <Calendar plans={monthPlans} />
+            </div>
+          ))}
 
-        {plan.length === 0 && (
+        {yearlyPlans.length === 0 && (
           <p className="text-gray-700">No reading plan generated yet.</p>
         )}
       </div>

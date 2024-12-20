@@ -4,9 +4,9 @@ import { useState } from "react";
 import { DayReading, generateReadingPlan } from "./utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar } from "./Calendar";
+import { Calendar } from "./components/Calendar";
 import { BIBLE_BOOKS, Book } from "./bookMeta";
-import { BookOrderInput } from "./BookOrderInput";
+import { BookOrderInput } from "./components/BookOrderInput";
 
 function groupByMonth(dayReadings: DayReading[]): DayReading[][] {
   const monthlyPlans: DayReading[][] = [];

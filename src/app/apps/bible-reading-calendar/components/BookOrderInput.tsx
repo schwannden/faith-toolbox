@@ -1,6 +1,5 @@
 import { Reorder } from "motion/react";
-import { Book } from "./bookMeta";
-import { Button } from "@/components/ui/button";
+import { Book } from "../bookMeta";
 
 export const BookOrderInput = ({
   bookOrder,

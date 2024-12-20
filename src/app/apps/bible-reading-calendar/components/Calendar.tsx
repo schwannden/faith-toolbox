@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { DayReading } from "./utils";
+import { DayReading } from "../utils";
 import { Separator } from "@/components/ui/separator";
 
 interface CalendarProps {

@@ -7,7 +7,9 @@ const unoptimized = process.env.UNOPTIMIZED ? true : undefined;
 const nextConfig: NextConfig = {
   output,
   basePath,
-  unoptimized,
+  images: {
+    unoptimized,
+  },
 };
 
 export default nextConfig;

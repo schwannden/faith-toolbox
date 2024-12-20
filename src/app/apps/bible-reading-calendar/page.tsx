@@ -4,7 +4,9 @@ import { useState } from "react";
 import { DayReading, generateReadingPlan } from "./utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar } from "./calendar";
+import { Calendar } from "./Calendar";
+import { BIBLE_BOOKS, Book } from "./bookMeta";
+import { BookOrderInput } from "./BookOrderInput";
 
 function groupByMonth(dayReadings: DayReading[]): DayReading[][] {
   const monthlyPlans: DayReading[][] = [];
@@ -39,11 +41,12 @@ function groupByMonth(dayReadings: DayReading[]): DayReading[][] {
 export default function BibleReadingCalendar() {
   const [year, setYear] = useState<number>(new Date().getFullYear() + 1);
   const [yearlyPlans, setYearlyPlans] = useState<DayReading[]>([]);
+  const [bookOrder, setBookOrder] = useState<Book[]>(BIBLE_BOOKS);
 
   const monthlyPlans = groupByMonth(yearlyPlans);
 
   const handleGenerate = () => {
-    const readingPlan = generateReadingPlan(year);
+    const readingPlan = generateReadingPlan(year, bookOrder);
     setYearlyPlans(readingPlan);
   };
 
@@ -53,6 +56,10 @@ export default function BibleReadingCalendar() {
         <h1 className="text-3xl font-bold mb-6">
           Bible Reading Calendar Generator
         </h1>
+
+        <div className="flex items-center space-x-4 mb-6">
+          <BookOrderInput bookOrder={bookOrder} setBookOrder={setBookOrder} />
+        </div>
 
         <div className="flex items-center space-x-4 mb-6">
           <Input

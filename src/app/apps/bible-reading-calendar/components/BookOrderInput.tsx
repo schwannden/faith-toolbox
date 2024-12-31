@@ -1,5 +1,6 @@
 import { Reorder } from "motion/react";
 import { Book } from "../bookMeta";
+import { useTranslations } from "next-intl";
 
 export const BookOrderInput = ({
   bookOrder,
@@ -8,9 +9,10 @@ export const BookOrderInput = ({
   bookOrder: Book[];
   setBookOrder: (bookOrder: Book[]) => void;
 }) => {
+  const t = useTranslations('app.apps.bible-reading-calendar');
   return (
     <div className="flex flex-col w-full">
-      <p>Drag and drop to reorder the books.</p>
+      <p>{t('instruction')}</p>
       <Reorder.Group
         axis="x"
         layoutScroll
@@ -26,7 +28,7 @@ export const BookOrderInput = ({
             as="span"
             className="p-2 hover:bg-gray-100"
           >
-            {item}
+            {t(`book.${item}`)}
           </Reorder.Item>
         ))}
       </Reorder.Group>

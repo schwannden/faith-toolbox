@@ -21,9 +21,9 @@ export class DayReading {
 
   readableScope(): string {
     if (this.scope.chapters.length === 1) {
-      return `${this.scope.book} ${this.scope.chapters[0]}`;
+      return `${this.scope.chapters[0]}`;
     }
-    return `${this.scope.book} ${this.scope.chapters[0]}-${this.scope.chapters[this.scope.chapters.length - 1]}`;
+    return `${this.scope.chapters[0]}-${this.scope.chapters[this.scope.chapters.length - 1]}`;
   }
 }
 

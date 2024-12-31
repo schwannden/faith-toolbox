@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { DayReading } from "../utils";
 import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 
 interface CalendarProps {
   plans: DayReading[];
@@ -10,9 +11,8 @@ type PlanLookup = {
   [key: string]: DayReading;
 };
 
-const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
 export const Calendar: React.FC<CalendarProps> = ({ plans }) => {
+  const t = useTranslations("app.apps.bible-reading-calendar");
   if (!plans || plans.length === 0) {
     return <div>No plans available</div>;
   }
@@ -20,9 +20,7 @@ export const Calendar: React.FC<CalendarProps> = ({ plans }) => {
   // Parse the year and month from the first plan's date
   // All plans are within the same year and month according to the prompt.
   const [year, month] = plans[0].date.split("-").map(Number);
-  const monthName = new Date(year, month - 1, 1).toLocaleString("default", {
-    month: "long",
-  });
+
 
   // Create a mapping from YYYY-MM-DD to a boolean for easy lookup
   const planDates = new Set();
@@ -81,12 +79,12 @@ export const Calendar: React.FC<CalendarProps> = ({ plans }) => {
 
   return (
     <div style={{ display: "inline-block" }} className="w-full">
-      <h2 className="text-2xl font-bold mb-2 mt-5 text-center">{monthName}</h2>
+      <h2 className="text-2xl font-bold mb-2 mt-5 text-center">{t(`month.${month}`)}</h2>
       <table className="w-full">
         <thead>
           <tr>
-            {daysOfWeek.map((d) => (
-              <th key={d}>{d}</th>
+            {Object.keys(t.raw("weekday")).map((d) => (
+              <th key={d}>{t(`weekday.${d}`)}</th>
             ))}
           </tr>
         </thead>
@@ -105,12 +103,14 @@ export const Calendar: React.FC<CalendarProps> = ({ plans }) => {
                     {cell.isCurrentMonth ? (
                       <Button
                         variant="secondary"
-                        size="default"
+                        size="sm"
                         className="w-full h-full bg-red-100"
                       >
                         <div className="h-full">
                           {buttonText}
                           <Separator className="bg-stone-50" />
+                          {t(`book.${cell.plan?.scope.book}`)}
+                          <br />
                           {cell.plan?.readableScope()}
                         </div>
                       </Button>

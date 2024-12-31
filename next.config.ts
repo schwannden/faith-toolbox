@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from "next-intl/plugin";
 
 const output = process.env.EXPORT ? "export" : undefined;
 const basePath = process.env.BASE_PATH || undefined;

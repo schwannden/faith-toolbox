@@ -4,6 +4,7 @@
       "bible-reading-calendar": {
         "title": "Bible Reading Calendar Generator",
         "instruction": "Drag and drop to reorder the books.",
+        "instruction-touch": "Tap and hold to reorder the books.",
         "generate": "Generate",
         "weekday": {
           "0": "Mon",
@@ -99,6 +100,7 @@
       }
     },
     "footer": {
+      "back-to-home": "Back to Home",
       "learn-next-js": "Learn Next.js",
       "contribute": "Contribute",
       "join-discord": "Join the community at Discord →"

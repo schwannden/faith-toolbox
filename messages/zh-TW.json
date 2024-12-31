@@ -4,6 +4,7 @@
       "bible-reading-calendar": {
         "title": "年度讀經計畫產生器",
         "instruction": "拖放以重新排序書卷。",
+        "instruction-touch": "長按並拖放以重新排序書卷。",
         "generate": "產生",
         "weekday": {
           "0": "一",
@@ -99,6 +100,7 @@
       }
     },
     "footer": {
+      "back-to-home": "首頁",
       "learn-next-js": "學習 Next.js",
       "contribute": "貢獻",
       "join-discord": "加入 Discord 社群 →"
@@ -109,4 +111,3 @@
     "en": "English"
   }
 }
-

@@ -21,7 +21,6 @@ export const Calendar: React.FC<CalendarProps> = ({ plans }) => {
   // All plans are within the same year and month according to the prompt.
   const [year, month] = plans[0].date.split("-").map(Number);
 
-
   // Create a mapping from YYYY-MM-DD to a boolean for easy lookup
   const planDates = new Set();
   const planLookup: PlanLookup = {};
@@ -79,7 +78,9 @@ export const Calendar: React.FC<CalendarProps> = ({ plans }) => {
 
   return (
     <div style={{ display: "inline-block" }} className="w-full">
-      <h2 className="text-2xl font-bold mb-2 mt-5 text-center">{t(`month.${month}`)}</h2>
+      <h2 className="text-2xl font-bold mb-2 mt-5 text-center">
+        {t(`month.${month}`)}
+      </h2>
       <table className="w-full">
         <thead>
           <tr>

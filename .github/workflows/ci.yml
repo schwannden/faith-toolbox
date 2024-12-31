@@ -34,10 +34,3 @@ jobs:
 
       - name: Test
         run: npm test
-
-      - name: Build project
-        run: npm run build
-        env:
-          EXPORT: 1
-          UNOPTIMIZED: 1
-          BASE_PATH: ${{ steps.configurepages.outputs.base_path }}

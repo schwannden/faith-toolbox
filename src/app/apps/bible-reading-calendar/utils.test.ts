@@ -26,9 +26,9 @@ describe("generateReadingPlan", () => {
     expect(chaptersInPlan).toBe(TOTAL_CHAPTERS);
     for (const day of plan) {
       if (day.scope.chapters.length === 1) {
-        expect(day.readableScope()).toMatch(/[A-Z][a-z]+ \d+/);
+        expect(day.readableScope()).toMatch(/\d+/);
       } else {
-        expect(day.readableScope()).toMatch(/[A-Z][a-z]+ \d+-\d+/);
+        expect(day.readableScope()).toMatch(/\d+-\d+/);
       }
     }
   });

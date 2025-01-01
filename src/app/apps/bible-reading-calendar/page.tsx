@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Calendar } from "./components/Calendar";
 import { BIBLE_BOOKS, Book } from "./bookMeta";
 import { BookOrderInput } from "./components/BookOrderInput";
+import { useTranslations } from "next-intl";
 
 function groupByMonth(dayReadings: DayReading[]): DayReading[][] {
   const monthlyPlans: DayReading[][] = [];
@@ -42,6 +43,7 @@ export default function BibleReadingCalendar() {
   const [year, setYear] = useState<number>(new Date().getFullYear() + 1);
   const [yearlyPlans, setYearlyPlans] = useState<DayReading[]>([]);
   const [bookOrder, setBookOrder] = useState<Book[]>(BIBLE_BOOKS);
+  const t = useTranslations("app.apps.bible-reading-calendar");
 
   const monthlyPlans = groupByMonth(yearlyPlans);
 
@@ -53,9 +55,7 @@ export default function BibleReadingCalendar() {
   return (
     <div className="p-8">
       <div className="max-w-4xl mx-auto rounded shadow p-6">
-        <h1 className="text-3xl font-bold mb-6">
-          Bible Reading Calendar Generator
-        </h1>
+        <h1 className="text-3xl font-bold mb-6">{t("title")}</h1>
 
         <div className="flex items-center space-x-4 mb-6">
           <BookOrderInput bookOrder={bookOrder} setBookOrder={setBookOrder} />

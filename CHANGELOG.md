@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.1](https://github.com/schwannden/faith-toolbox/compare/v1.2.0...v1.2.1) (2025-02-27)
+
+
+### Build Related
+
+* **deps-dev:** bump @testing-library/react from 16.1.0 to 16.2.0 ([#33](https://github.com/schwannden/faith-toolbox/issues/33)) ([9559a74](https://github.com/schwannden/faith-toolbox/commit/9559a7452dc822b8634e0549d027dfa374cb2d7c))
+* **deps-dev:** bump @types/node from 22.10.5 to 22.13.5 ([#56](https://github.com/schwannden/faith-toolbox/issues/56)) ([4c54a15](https://github.com/schwannden/faith-toolbox/commit/4c54a1597b98ca3b90f695c498296501f48c637a))
+* **deps-dev:** bump eslint from 9.18.0 to 9.21.0 ([#58](https://github.com/schwannden/faith-toolbox/issues/58)) ([c8a5c34](https://github.com/schwannden/faith-toolbox/commit/c8a5c34932e167afe7f2f44dcc98179fcdde9af2))
+* **deps-dev:** bump eslint-config-next from 15.1.4 to 15.1.7 ([#55](https://github.com/schwannden/faith-toolbox/issues/55)) ([0e99911](https://github.com/schwannden/faith-toolbox/commit/0e9991139525ba270eae1bc60cc0a493cb61b345))
+* **deps-dev:** bump eslint-config-prettier from 9.1.0 to 10.0.1 ([#32](https://github.com/schwannden/faith-toolbox/issues/32)) ([907fe8a](https://github.com/schwannden/faith-toolbox/commit/907fe8a9ffdc75a8d62808964d06dff26674f0ff))
+* **deps-dev:** bump postcss from 8.4.49 to 8.5.3 ([#59](https://github.com/schwannden/faith-toolbox/issues/59)) ([d182561](https://github.com/schwannden/faith-toolbox/commit/d182561a114bc041ef4d4b92944a7747041e831e))
+* **deps:** bump @radix-ui/react-select from 2.1.4 to 2.1.6 ([#46](https://github.com/schwannden/faith-toolbox/issues/46)) ([cd03234](https://github.com/schwannden/faith-toolbox/commit/cd032348ff462b7b67937ab7c60f346ed6401fb1))
+* **deps:** bump @radix-ui/react-tooltip from 1.1.6 to 1.1.8 ([#45](https://github.com/schwannden/faith-toolbox/issues/45)) ([c0b64ef](https://github.com/schwannden/faith-toolbox/commit/c0b64efe2a1b7c202763c824116a42a8a54184ca))
+* **deps:** bump next from 15.1.5 to 15.1.7 ([#54](https://github.com/schwannden/faith-toolbox/issues/54)) ([d5de44f](https://github.com/schwannden/faith-toolbox/commit/d5de44f94637f28eb726845cfb5f48b7c643d3d4))
+* **deps:** bump next from 15.1.7 to 15.2.0 ([#60](https://github.com/schwannden/faith-toolbox/issues/60)) ([4c7d4ce](https://github.com/schwannden/faith-toolbox/commit/4c7d4ce63f4d5c64423c2f467f2b56a96fb90e9d))
+
 ## [1.2.0](https://github.com/schwannden/faith-toolbox/compare/v1.1.0...v1.2.0) (2025-01-18)
 
 

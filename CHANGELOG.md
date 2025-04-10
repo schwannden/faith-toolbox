@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.2](https://github.com/schwannden/faith-toolbox/compare/v1.2.1...v1.2.2) (2025-04-10)
+
+
+### Build Related
+
+* **deps-dev:** bump @commitlint/cli from 19.6.1 to 19.8.0 ([#73](https://github.com/schwannden/faith-toolbox/issues/73)) ([7781374](https://github.com/schwannden/faith-toolbox/commit/778137484c4321a51bed5217bad2b5a01ccdee46))
+* **deps-dev:** bump @commitlint/config-conventional ([#72](https://github.com/schwannden/faith-toolbox/issues/72)) ([43f9d62](https://github.com/schwannden/faith-toolbox/commit/43f9d62c9c221e3b340bf389598684c89e16b143))
+* **deps-dev:** bump @types/node from 22.13.5 to 22.14.0 ([#87](https://github.com/schwannden/faith-toolbox/issues/87)) ([cf1361c](https://github.com/schwannden/faith-toolbox/commit/cf1361cc4cbdd88d399574f475464a837492a269))
+* **deps-dev:** bump eslint-config-next from 15.1.7 to 15.2.4 ([#86](https://github.com/schwannden/faith-toolbox/issues/86)) ([a735128](https://github.com/schwannden/faith-toolbox/commit/a7351284128db5d40fd13635056344984951e161))
+* **deps-dev:** bump prettier from 3.4.2 to 3.5.3 ([#67](https://github.com/schwannden/faith-toolbox/issues/67)) ([8501930](https://github.com/schwannden/faith-toolbox/commit/8501930ef01864bbe61c69adc091cbdc315fd840))
+* **deps-dev:** bump ts-jest from 29.2.5 to 29.3.1 ([#90](https://github.com/schwannden/faith-toolbox/issues/90)) ([40cbfa2](https://github.com/schwannden/faith-toolbox/commit/40cbfa20dc330a27ccc56b142af2c2ceb03b214f))
+* **deps-dev:** bump typescript from 5.7.3 to 5.8.3 ([#88](https://github.com/schwannden/faith-toolbox/issues/88)) ([931c140](https://github.com/schwannden/faith-toolbox/commit/931c140b96ec064d544d15a15edcff5fa499c8de))
+* **deps:** bump @radix-ui/react-separator from 1.1.1 to 1.1.2 ([#65](https://github.com/schwannden/faith-toolbox/issues/65)) ([3f5da4a](https://github.com/schwannden/faith-toolbox/commit/3f5da4af0030db8b6b242f1ac1671fdde9a0c92d))
+
+
+### Chores
+
+* upgrade react and next ([#93](https://github.com/schwannden/faith-toolbox/issues/93)) ([99c05b1](https://github.com/schwannden/faith-toolbox/commit/99c05b1c5720ae8ff4be1d2379dee2f0e0e9eafd))
+* upgrade tailwind to 4 ([#92](https://github.com/schwannden/faith-toolbox/issues/92)) ([40b4318](https://github.com/schwannden/faith-toolbox/commit/40b43181a45c560570787c250603cc50d1bd83a3))
+
 ## [1.2.1](https://github.com/schwannden/faith-toolbox/compare/v1.2.0...v1.2.1) (2025-02-27)
 
 

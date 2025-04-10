@@ -54,7 +54,7 @@ export default function BibleReadingCalendar() {
 
   return (
     <div className="p-8">
-      <div className="max-w-4xl mx-auto rounded shadow p-6">
+      <div className="max-w-4xl mx-auto rounded shadow-sm p-6">
         <h1 className="text-3xl font-bold mb-6">{t("title")}</h1>
 
         <div className="flex items-center space-x-4 mb-6">

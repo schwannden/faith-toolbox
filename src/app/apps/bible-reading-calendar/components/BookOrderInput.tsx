@@ -43,7 +43,7 @@ const DraggableBook = ({
   return (
     <span
       ref={ref}
-      className="p-2 hover:bg-gray-100 outline outline-1 outline-gray-200 flex-shrink-0"
+      className="p-2 hover:bg-gray-100 outline outline-1 outline-gray-200 shrink-0"
     >
       {item}
     </span>

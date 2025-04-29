@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.2.3](https://github.com/schwannden/faith-toolbox/compare/v1.2.2...v1.2.3) (2025-04-29)
+
+
+### Build Related
+
+* **deps-dev:** bump @types/node from 22.14.0 to 22.15.3 ([#110](https://github.com/schwannden/faith-toolbox/issues/110)) ([9023951](https://github.com/schwannden/faith-toolbox/commit/90239519745556164420d09e92a0088b2b480fce))
+* **deps-dev:** bump @types/react from 19.1.0 to 19.1.2 ([#104](https://github.com/schwannden/faith-toolbox/issues/104)) ([95cf7ce](https://github.com/schwannden/faith-toolbox/commit/95cf7ce567589e54ab245fb92a82e903bef1879f))
+* **deps-dev:** bump eslint from 9.24.0 to 9.25.1 ([#108](https://github.com/schwannden/faith-toolbox/issues/108)) ([eaa7aa2](https://github.com/schwannden/faith-toolbox/commit/eaa7aa24610f48590046eecf3e64a14ab1c7bdef))
+* **deps-dev:** bump eslint-config-next from 15.2.4 to 15.3.1 ([#103](https://github.com/schwannden/faith-toolbox/issues/103)) ([df04937](https://github.com/schwannden/faith-toolbox/commit/df049373c5c47c77ea07379168b3d834414b97b3))
+* **deps-dev:** bump eslint-config-prettier from 10.1.1 to 10.1.2 ([#95](https://github.com/schwannden/faith-toolbox/issues/95)) ([6c8cc85](https://github.com/schwannden/faith-toolbox/commit/6c8cc8573fdf5ef636428587b6ddfcb7b95c1f81))
+* **deps-dev:** bump tailwindcss from 4.1.3 to 4.1.4 ([#106](https://github.com/schwannden/faith-toolbox/issues/106)) ([f198c62](https://github.com/schwannden/faith-toolbox/commit/f198c620adaf4c012fb9bb4949886c05322c0a0d))
+* **deps-dev:** bump ts-jest from 29.3.1 to 29.3.2 ([#101](https://github.com/schwannden/faith-toolbox/issues/101)) ([7e8288f](https://github.com/schwannden/faith-toolbox/commit/7e8288fb69122bc8fa6658e0259c1da3f3553d62))
+* **deps:** bump lucide-react from 0.473.0 to 0.503.0 ([#111](https://github.com/schwannden/faith-toolbox/issues/111)) ([9687678](https://github.com/schwannden/faith-toolbox/commit/9687678a389abadc00d3b02c2b49e76481b482b3))
+* **deps:** bump next-intl from 3.26.5 to 4.1.0 ([#109](https://github.com/schwannden/faith-toolbox/issues/109)) ([3acd40e](https://github.com/schwannden/faith-toolbox/commit/3acd40ebee2832949381524ce3cdba816356af6b))
+* **deps:** bump tailwind-merge from 2.6.0 to 3.2.0 ([#100](https://github.com/schwannden/faith-toolbox/issues/100)) ([469aad9](https://github.com/schwannden/faith-toolbox/commit/469aad95612652a5876ddf28ad1ecce1e0ad9602))
+
 ## [1.2.2](https://github.com/schwannden/faith-toolbox/compare/v1.2.1...v1.2.2) (2025-04-10)
 
 
